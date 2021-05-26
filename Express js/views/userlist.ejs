@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>User List</title>
+    <style>
+        section{
+            width: 66%;
+            margin: auto;
+        }
+    </style>
+  </head>
+  <body>
+      <section>
+    <h2 class="text-center mt-2">User Details</h3>
+    <table class="table table-striped table-hover" border="1">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(userList.length!=0){userList.forEach(function(data){ %>
+        <tr>
+          <!-- <th scope="row"></th> -->
+          <td><%=data.id %></td>
+          <td><%=data.name %></td>
+          <td><%=data.email %></td>
+          <td><%=data.password %></td>
+        </tr>
+        <% }) %> <% } else{ %>
+        <tr>
+          <td colspan="7">No Data Found</td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    </section>
+  </body>
+</html>
